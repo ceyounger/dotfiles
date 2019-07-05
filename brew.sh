@@ -146,7 +146,7 @@ declare -a brew_cask_apps=(
   'java'
 #  'jetbrains-toolbox'
 #  'noti'
-#  'paragon-ntfs'
+  'paragon-ntfs'
 #  'postman'
 #  'qlcolorcode'
 #  'qlmarkdown'
