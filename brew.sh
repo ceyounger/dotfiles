@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+###############################################################################
+# Install brew and brew cask apps                                             #
+###############################################################################
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Install command-line tools using Homebrew.
 
 # Make sure we’re using the latest Homebrew.
@@ -78,22 +84,136 @@ brew install nmap
 #brew install xz
 
 # Install other useful binaries.
-brew install ack
-#brew install exiv2
-brew install git
-brew install git-lfs
-brew install imagemagick --with-webp
-brew install lua
-brew install lynx
-brew install p7zip
-brew install pigz
-brew install pv
-brew install rename
-brew install rlwrap
-brew install ssh-copy-id
-brew install tree
-brew install vbindiff
-brew install zopfli
+declare -a brew_cli_tools=(
+  'ack'
+  'autojump'
+  'bat'
+  'composer'
+#  'exiv2'
+  'ffmpeg'
+  'fzf'
+  'git'
+  'git-lfs'
+  'gradle'
+  'htop'
+  'hugo'
+#  'imagemagick --with-webp'
+#  'lua'
+#  'lynx'
+  'mas'
+  'p7zip'
+  'parallel'
+  'php'
+  'pigz'
+  'pv'
+  'rename'
+  'rlwrap'
+  'sbt'
+  'ssh-copy-id'
+  'tldr'
+  'tree'
+  'vbindiff'
+  'youtube-dl'
+  'zopfli'
+  'zsh'
+  'zsh-syntax-highlighting'
+  'zsh-autosuggestions'
+)
+
+for tool in "${brew_cli_tools[@]}"; do
+  brew install "$tool"
+done
+
+# Add older versions cask repository because of 1Password subscription based business model change from v6 to v7
+
+brew tap homebrew/cask-versions
+
+declare -a brew_cask_apps=(
+  '1password6'
+  'appcleaner'
+#  'bartender'
+#  'betterzip'
+#  'caffeine'
+#  'contexts'
+#  'colorpicker-skalacolor'
+  'docker'
+  'dropbox'
+  'google-backup-and-sync'
+  'google-chrome'
+  'istat-menus'
+  'iterm2'
+  'java'
+#  'jetbrains-toolbox'
+#  'noti'
+#  'paragon-ntfs'
+#  'postman'
+#  'qlcolorcode'
+#  'qlmarkdown'
+#  'qlstephen'
+#  'qlvideo'
+#  'quicklook-json'
+  'rocket'
+#  'sequel-pro'
+#  'sketchbook'
+  'slack'
+#  'spotify'
+  'sourcetree'
+  'suspicious-package'
+  'the-unarchiver'
+#  'transmit'
+#  'transmission'
+#  'visualvm'
+  'visual-studio-code'
+  'vlc'
+#  'webpquicklook'
+#  'whatsapp'
+)
+
+for app in "${brew_cask_apps[@]}"; do
+  brew cask install "$app"
+done
+
+###############################################################################
+# Install Mac App Store apps                                                  #
+###############################################################################
+
+declare -a mas_apps=(
+  '409183694' # Keynote
+#  '540348655' # Monosnap
+#  '1278508951' # Trello
+#  '441258766' # Magnet
+  '408981434' # iMovie
+#  '715464874' # Disk Map
+#  '587512244' # Kaleidoscope
+  '784801555' # OneNote
+  '1043270657' # GIF Keyboard
+  '1295203466' # Microsoft Remote Desktop 10
+  '1153157709' # Speedtest by Ookla
+  '926036361' # LastPass
+  '404010395' # TextWrangler
+  '409789998' # Twitter
+  '1226444549' # Phiewer
+)
+
+for app in "${mas_apps[@]}"; do
+  mas install "$app"
+done
+
+###############################################################################
+# Configure installed apps                                                    #
+###############################################################################
+
+# Set ZSH as the default shell
+#sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Run the Paragon NTFS installer
+#open /usr/local/Caskroom/paragon-ntfs/15/FSInstaller.app
+
+###############################################################################
+# Install other apps (WIP)                                                    #
+###############################################################################
+
+# Fonts (WIP)
 
 # Remove outdated versions from the cellar.
 brew cleanup
