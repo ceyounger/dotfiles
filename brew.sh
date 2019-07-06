@@ -208,7 +208,7 @@ done
 #sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Run the Paragon NTFS installer
-#open /usr/local/Caskroom/paragon-ntfs/15/FSInstaller.app
+open /usr/local/Caskroom/paragon-ntfs/15/FSInstaller.app
 
 ###############################################################################
 # Install other apps (WIP)                                                    #
