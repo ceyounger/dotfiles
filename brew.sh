@@ -27,7 +27,7 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+brew install gnu-sed 
 # Install Bash 4.
 brew install bash
 brew install bash-completion2
@@ -39,13 +39,13 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
 fi;
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
+brew install wget 
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
+brew install vim 
 brew install grep
 brew install openssh
 brew install screen
@@ -84,6 +84,9 @@ brew install nmap
 #brew install xpdf
 #brew install xz
 
+# Install Java for dependencies
+brew cask install java
+
 # Install other useful binaries.
 declare -a brew_cli_tools=(
   'ack'
@@ -103,7 +106,7 @@ declare -a brew_cli_tools=(
 #  'lynx'
   'mas'
   'p7zip'
-  'parallel'
+#  'parallel'
   'php'
   'pigz'
   'pv'
@@ -143,7 +146,7 @@ declare -a brew_cask_apps=(
   'google-chrome'
   'istat-menus'
   'iterm2'
-  'java'
+#  'java'
 #  'jetbrains-toolbox'
 #  'noti'
   'paragon-ntfs'
@@ -179,20 +182,21 @@ done
 ###############################################################################
 
 declare -a mas_apps=(
-  '409183694' # Keynote
+#  '409183694' # Keynote
 #  '540348655' # Monosnap
 #  '1278508951' # Trello
 #  '441258766' # Magnet
-  '408981434' # iMovie
+#  '408981434' # iMovie
 #  '715464874' # Disk Map
 #  '587512244' # Kaleidoscope
+  '1450038993' # Microsoft Office 365
   '784801555' # OneNote
   '1043270657' # GIF Keyboard
   '1295203466' # Microsoft Remote Desktop 10
   '1153157709' # Speedtest by Ookla
   '926036361' # LastPass
   '404010395' # TextWrangler
-  '409789998' # Twitter
+#  '409789998' # Twitter
   '1226444549' # Phiewer
 )
 
