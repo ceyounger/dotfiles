@@ -159,6 +159,7 @@ declare -a brew_cask_apps=(
   'sourcetree'
   'suspicious-package'
   'the-unarchiver'
+  'tuntap'
 #  'transmit'
 #  'transmission'
 #  'visualvm'
