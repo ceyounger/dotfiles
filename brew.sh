@@ -142,7 +142,7 @@ declare -a brew_cask_apps=(
 #  'colorpicker-skalacolor'
   'docker'
   'dropbox'
-  'google-backup-and-sync'
+#  'google-backup-and-sync'
   'google-chrome'
   'istat-menus'
   'iterm2'
