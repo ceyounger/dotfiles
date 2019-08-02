@@ -94,6 +94,7 @@ declare -a brew_cli_tools=(
   'gradle'
   'htop'
   'hugo'
+	'kompose'
 #  'imagemagick --with-webp'
 #  'lua'
 #  'lynx'
