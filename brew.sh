@@ -211,6 +211,9 @@ done
 # Run the Paragon NTFS installer
 open /usr/local/Caskroom/paragon-ntfs/15/FSInstaller.app
 
+# Fix gettext
+brew link --force gettext
+
 ###############################################################################
 # Install other apps (WIP)                                                    #
 ###############################################################################
