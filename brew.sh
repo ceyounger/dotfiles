@@ -80,6 +80,7 @@ declare -a brew_cli_tools=(
   'bash-completion2'
   'bat'
   'composer'
+	'doctl'
 #  'exiv2'
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
   'findutils'
