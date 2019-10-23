@@ -149,6 +149,7 @@ declare -a brew_cask_apps=(
 #  'noti'
   'paragon-ntfs'
 #  'postman'
+  'powershell'
 #  'qlcolorcode'
 #  'qlmarkdown'
 #  'qlstephen'
