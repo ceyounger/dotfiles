@@ -69,7 +69,7 @@ brew install nmap
 #brew install xz
 
 # Install Java for dependencies
-brew cask install java
+brew cask install java11
 
 # Install other useful binaries.
 declare -a brew_cli_tools=(
