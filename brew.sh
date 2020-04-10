@@ -90,6 +90,8 @@ declare -a brew_cli_tools=(
   'git-lfs'
 # Install GnuPG to enable PGP-signing commits.
   'gnupg'
+  'gpg2'
+  'pinentry-mac'
 # Install GNU `sed`, overwriting the built-in `sed`.
   'gnu-sed'
   'gradle'
@@ -209,13 +211,19 @@ done
 ###############################################################################
 
 # Set ZSH as the default shell
-#sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Run the Paragon NTFS installer
 open /usr/local/Caskroom/paragon-ntfs/15/FSInstaller.app
 
 # Fix gettext
 brew link --force gettext
+
+echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+
+echo "use-agent" >> ~/.gnupg/.gpg.conf
+
+echo "export GPG_TTY=`tty` >> ~/.zshrc
 
 ###############################################################################
 # Install other apps (WIP)                                                    #
